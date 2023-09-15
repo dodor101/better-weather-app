@@ -13,13 +13,49 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <h1>Better Weather</h1>
+    <header class="container-fluid bg-primary p-4 d-flex justify-content-center text-light">
+      <h1 class="fs-1 fw-bold">Better Weather</h1>
+    </header>
+    <main class="min-vh-100 bg-secondary container-fluid d-flex g-2 flex-wrap justify-content-around p-4">
+      <section class="form-section p-3 col-12 col-md-6 col-lg-4">
+        <form id="form-city">
+          <input class="form-control mb-3" type="text" id="city-name" placeholder="Search" />
+          <input class="form-control btn btn-block bg-warning mb-3" type="submit" />
+        </form>
+        <div id="display-search-history">
+          <button type="button" class="btn btn-success w-100">Hudson</button>
+        </div>
+      </section>
+
+      <section class="display-content p-3 text-light col-12 col-md-6 col-lg-8">
+        <div class="p-2 bg-primary border border-1">
+          <h3>Hudson (09/15/23) 🌞</h3>
+          <br />
+          <p>Temp:<span> -19°F </span></p>
+          <p>Wind:<span> 45 MHP</span></p>
+          <p>Humidity:<span> 23 %</span></p>
+        </div>
+        <h3 class="m-2">Five Day Forecast</h3>
+
+        <div class="display-five-forecast"></div>
+      </section>
+    </main>
+
+    <!-- Dependencies -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
