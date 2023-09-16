@@ -19,8 +19,8 @@
     <main class="min-vh-100 bg-secondary container-fluid d-flex g-2 flex-wrap justify-content-around p-4">
       <section class="form-section p-3 col-12 col-md-6 col-lg-4">
         <form id="form-city">
-          <input class="form-control mb-3" type="text" id="city-name" placeholder="Search" />
-          <input class="form-control btn btn-block bg-warning mb-3" type="submit" />
+          <input class="form-control mb-3" type="text" id="city-name" placeholder="City name" />
+          <input class="form-control btn btn-block bg-warning mb-3" type="submit"  value='Search'/>
         </form>
         <div id="display-search-history">
           <button type="button" class="btn btn-success w-100">Hudson</button>
@@ -28,7 +28,7 @@
       </section>
 
       <section class="display-content p-3 text-light col-12 col-md-6 col-lg-8">
-        <div class="p-2 bg-primary border border-1">
+        <div class="p-2 bg-primary border border-1" id='display-today'>
           <h3>Hudson (09/15/23) 🌞</h3>
           <br />
           <p>Temp:<span> -19°F </span></p>
@@ -37,7 +37,7 @@
         </div>
         <h3 class="m-2">Five Day Forecast</h3>
 
-        <div class="display-five-forecast"></div>
+        <div id="display-five-forecast"></div>
       </section>
     </main>
 
