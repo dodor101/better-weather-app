@@ -153,9 +153,9 @@ function renderData(data) {
     windEl.text(wind);
     humidityEl.text(humidityValue);
     div.append(dateEl, weatherImg, temperature, windEl, humidityEl);
-    div.attr('class', 'd-flex flex-column gap px-4 py-2  w-fit  bg-primary');
+    div.attr('class', 'd-flex flex-column fs-4 gap px-4  w-100  bg-primary');
 
-    display5DayForecast.append(div).attr('class', 'd-flex  gap-2 p-2 col-12 col-md-6 col-lg-8 ');
+    display5DayForecast.append(div).attr('class', 'd-flex w-100  gap-4 p-2 col-12 col-md-6 col-lg-8  ');
   }
 }
 
@@ -185,7 +185,7 @@ function renderSearchHistory(searchHistory) {
   searchHistory?.forEach((city, index) => {
     const searchCityEl = $('<input>');
 
-    searchCityEl.attr('class', 'btn btn-success w-100 mb-2');
+    searchCityEl.attr('class', 'btn custom-btn w-100 fs-3  mb-2');
     searchCityEl.attr('data-id', `${index}`);
     searchCityEl.attr('value', `${city}`);
     searchCityEl.attr('type', `button`);
