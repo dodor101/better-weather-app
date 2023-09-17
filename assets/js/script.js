@@ -50,7 +50,6 @@ async function getCoordination(lat, lon) {
 }
 
 async function getCity(city = cityInput.val()) {
-  console.log(typeof city);
   if (typeof city !== 'string') {
     alert('You must use Letters only!');
     return;
@@ -79,10 +78,10 @@ async function getCity(city = cityInput.val()) {
 }
 
 // get weather button
-cityFormEl.on('submit', (event) => {
+cityFormEl.on('submit', async(event) => {
   event.preventDefault();
 
-  getCity();
+  await getCity();
 });
 
 function renderCurrentWeather(currentWeather) {
@@ -211,8 +210,8 @@ function getItems() {
 getItems();
 
 // search history btn even
-searchHistoryBtn.on('click', (e) => {
+searchHistoryBtn.on('click', async (e) => {
   e.stopImmediatePropagation();
   let city = e.target.value;
-  getCity(city);
+  await getCity(city);
 });
