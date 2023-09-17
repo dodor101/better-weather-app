@@ -20,15 +20,24 @@
     <main class="min-vh-100 bg-secondary container-fluid d-flex p-3 flex-wrap justify-content-center p-4">
       <section class="form-section p-3 col-12 col-md-6 col-lg-4">
         <form id="form-city">
-          <input class="form-control mb-3" type="text" id="city-name" placeholder="City name" />
+          <input
+            class="form-control mb-3"
+            pattern="[A-Za-z]+"
+            title="Enter letters only"
+            type="text"
+            id="city-name"
+            placeholder="City name"
+          />
           <input class="form-control btn btn-block bg-warning mb-3" type="submit" value="Search" />
         </form>
         <p class="text-center text-light">OR</p>
+
+        <h3 class="text-center text-light">Search History</h3>
         <div id="display-search-history"></div>
       </section>
 
-      <section class="display-content mt-3 text-light col-12 col-md-6 col-lg-8">
-        <div class="p-2 bg-primary border border-1" id="display-today"></div>
+      <section class="display-content mt-3 text-light col-12 col-md-6 col-lg-5 ">
+        <div class="p-4 bg-primary border border-1" id="display-today"></div>
         <h3 class="m-2">Five Day Forecast</h3>
 
         <div id="display-five-forecast"></div>

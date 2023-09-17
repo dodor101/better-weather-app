@@ -25,6 +25,7 @@ async function getGeo(city) {
     alert('You must use Letters only!');
     return;
   }
+
   // declare  queryURL
   const queryURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${APIKey}`;
 
@@ -49,13 +50,19 @@ async function getCoordination(lat, lon) {
 }
 
 async function getCity(city = cityInput.val()) {
-  // let city =
+  console.log(typeof city);
+  if (typeof city !== 'string') {
+    alert('You must use Letters only!');
+    return;
+  }
+
   if (!city) {
     return alert('Enter a city 🙂');
   }
   storeCity(city);
   let weatherData = await getGeo(city);
 
+  clearData();
   // destructure lat & lon
   const { lat, lon } = weatherData[0];
   // current forecast
@@ -140,19 +147,19 @@ function renderData(data) {
     let temp = `Temp:  ${fahrenheit.toFixed()}°F`;
     let wind = `Wind:  ${windSpeed} MPH`;
     let humidityValue = `Humidity:  ${humidity}%`;
+
     dateEl.text(withDayJs);
     temperature.text(temp);
     windEl.text(wind);
     humidityEl.text(humidityValue);
     div.append(dateEl, weatherImg, temperature, windEl, humidityEl);
-    div.attr('class', 'd-flex flex-column gap p-2  w-fit ');
+    div.attr('class', 'd-flex flex-column gap px-4 py-2  w-fit  bg-primary');
 
-    display5DayForecast.append(div).attr('class', 'd-flex  gap-2 p-2 col-12 col-md-6 col-lg-8');
+    display5DayForecast.append(div).attr('class', 'd-flex  gap-2 p-2 col-12 col-md-6 col-lg-8 ');
   }
 }
 
 // store cities search in localStorage
-
 function storeCity(city) {
   // Check if localStorage is supported in the browser
   if (typeof localStorage !== 'undefined') {
@@ -182,10 +189,16 @@ function renderSearchHistory(searchHistory) {
     searchCityEl.attr('data-id', `${index}`);
     searchCityEl.attr('value', `${city}`);
     searchCityEl.attr('type', `button`);
-    //  searchCityEl.text(city);
+    searchCityEl.attr('pattern', `[A-Za-z]+`);
+    searchCityEl.attr('title', 'Enter letters only');
 
     searchHistoryBtn.append(searchCityEl);
   });
+}
+
+function clearData() {
+  // Remove all child elements (old data)
+  display5DayForecast.empty();
 }
 
 function getItems() {
@@ -203,4 +216,3 @@ searchHistoryBtn.on('click', (e) => {
   let city = e.target.value;
   getCity(city);
 });
-
