@@ -12,22 +12,22 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
+
   <body>
     <header class="container-fluid bg-primary p-4 d-flex justify-content-center text-light">
       <h1 class="fs-1 fw-bold">Better Weather</h1>
     </header>
-    <main class="min-vh-100 bg-secondary container-fluid d-flex p-3  flex-wrap justify-content-center p-4">
-      <section class="form-section   p-3 col-12 col-md-6 col-lg-4">
+    <main class="min-vh-100 bg-secondary container-fluid d-flex p-3 flex-wrap justify-content-center p-4">
+      <section class="form-section p-3 col-12 col-md-6 col-lg-4">
         <form id="form-city">
           <input class="form-control mb-3" type="text" id="city-name" placeholder="City name" />
           <input class="form-control btn btn-block bg-warning mb-3" type="submit" value="Search" />
         </form>
-        <div id="display-search-history">
-          <button type="button" class="btn btn-success w-100">Hudson</button>
-        </div>
+        <p class="text-center text-light">OR</p>
+        <div id="display-search-history"></div>
       </section>
 
-      <section class="display-content mt-3  text-light col-12 col-md-6 col-lg-8">
+      <section class="display-content mt-3 text-light col-12 col-md-6 col-lg-8">
         <div class="p-2 bg-primary border border-1" id="display-today"></div>
         <h3 class="m-2">Five Day Forecast</h3>
 
