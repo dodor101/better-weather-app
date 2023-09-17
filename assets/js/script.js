@@ -216,5 +216,9 @@ getItems();
 searchHistoryBtn.on('click', async (e) => {
   e.stopImmediatePropagation();
   let city = e.target.value;
-  await getCity(city);
+  try {
+    await getCity(city);
+  } catch (error) {
+    console.log(error);
+  }
 });
