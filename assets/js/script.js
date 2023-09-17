@@ -5,7 +5,7 @@ const displayToday = $('#display-today');
 
 const display5DayForecast = $('#display-five-forecast');
 // APIKey
-const APIKey = '3911b3545970347c6b98f6c645c609f0';
+const APIKey = '341c47e0aaaaa23b914e146587331d70';
 
 async function getCurrentWeather(lat, lon) {
   // declare  queryURL
@@ -78,7 +78,7 @@ async function getCity(city = cityInput.val()) {
 }
 
 // get weather button
-cityFormEl.on('submit', async(event) => {
+cityFormEl.on('submit', async (event) => {
   event.preventDefault();
 
   await getCity();
