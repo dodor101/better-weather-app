@@ -2,3 +2,11 @@
 .custom-btn{
   background-color: azure;
 }
+.custom-img{
+  width: 4rem;
+}
+
+.custom-with {
+  min-width: fit-content;
+  flex-wrap: wrap;
+}

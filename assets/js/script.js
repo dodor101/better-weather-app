@@ -133,7 +133,7 @@ function renderData(data) {
     // weather icon
     let weatherIcon = weatherData.weather[0].icon;
     weatherImg.attr('src', `https://openweathermap.org/img/w/${weatherIcon}.png`);
-    // wind
+    weatherImg.attr('class', 'custom-img');
     let windSpeed = weatherData.wind.speed;
     let humidity = weatherData.main.humidity;
     let date = weatherData.dt_txt.split(' ')[0];
@@ -155,9 +155,9 @@ function renderData(data) {
     windEl.text(wind);
     humidityEl.text(humidityValue);
     div.append(dateEl, weatherImg, temperature, windEl, humidityEl);
-    div.attr('class', 'd-flex flex-column fs-4 gap px-4  w-100  bg-primary');
+    div.attr('class', 'd-flex flex-column fs-4 gap px-4 custom-with  bg-primary');
 
-    display5DayForecast.append(div).attr('class', 'd-flex w-100  gap-4 p-2 col-12 col-md-6 col-lg-8  ');
+    display5DayForecast.append(div)
   }
 }
 
