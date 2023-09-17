@@ -27,7 +27,7 @@ async function getGeo(city) {
   }
 
   // declare  queryURL
-  const queryURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${APIKey}`;
+  const queryURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${APIKey}`;
 
   // fetch data with ajax
   const getData = await $.ajax({
