@@ -105,7 +105,7 @@ function renderCurrentWeather(currentWeather) {
   let fahrenheit = ((temp - 273.15) * 9) / 5 + 32;
   let wind = currentWeather.wind;
   let humidity = currentWeather.main.humidity;
-  weatherImg.attr('src', `http://openweathermap.org/img/w/${weatherIcon}.png`);
+  weatherImg.attr('src', `https://openweathermap.org/img/w/${weatherIcon}.png`);
 
   const heading = `${cityNameEl} (${withDayJs})`;
 
@@ -132,7 +132,7 @@ function renderData(data) {
     let weatherData = data.list[i * 8];
     // weather icon
     let weatherIcon = weatherData.weather[0].icon;
-    weatherImg.attr('src', `http://openweathermap.org/img/w/${weatherIcon}.png`);
+    weatherImg.attr('src', `https://openweathermap.org/img/w/${weatherIcon}.png`);
     // wind
     let windSpeed = weatherData.wind.speed;
     let humidity = weatherData.main.humidity;
