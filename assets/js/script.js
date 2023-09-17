@@ -80,8 +80,11 @@ async function getCity(city = cityInput.val()) {
 // get weather button
 cityFormEl.on('submit', async (event) => {
   event.preventDefault();
-
-  await getCity();
+  try {
+    await getCity(cityInput.val());
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 function renderCurrentWeather(currentWeather) {
