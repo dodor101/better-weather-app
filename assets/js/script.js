@@ -5,7 +5,7 @@ const displayToday = $('#display-today');
 
 const display5DayForecast = $('#display-five-forecast');
 // APIKey
-const APIKey = '341c47e0aaaaa23b914e146587331d70';
+const APIKey = '04cc8740579415ece9a716328fca3ca3';
 
 async function getCurrentWeather(lat, lon) {
   // declare  queryURL
